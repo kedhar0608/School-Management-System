@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+    <style>
+    
+      .box1 {
+        background-color:rgb(51, 98, 104);
+      width: 200px;
+      height:100px;
+      border: 15px ;
+      padding: 20px;
+     
+    }
+    a:link, a:visited {
+
+color: black;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+.myview{
+  --background: #fff url("class.jfif") no-repeat center center / cover;
+  animation-name: myEffect;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+.fancy-button {
+  --background: #00000000;
+}
+
+
+
+    </style>
+  </head>
+  <body  >
+    <ion-app class='myview'>
+        
+        <ion-toolbar color="light">
+        <ion-title align="center" position="floating">Student Registration Form</ion-title>      
+    </ion-toolbar>
+<ion-content class='myview'>
+  
+      <ion-grid >
+        <ion-row>
+            <ion-col size-lg="4" onclick="fun5()"><!--this is function for removing data in the block left to form-->
+               
+                  <ion-fab horizontal="center" vertical="center" slot="fixed">
+                    <ion-fab-button color="secondary">
+                      <ion-icon name="menu"></ion-icon>
+                    </ion-fab-button ><!--thi is floating button on left column-->
+                    <ion-fab-list side="top">
+                      <ion-fab-button color="danger" href="home3.html" class="fancy-button">
+                        <p title="Home"><ion-icon  name="home"></ion-icon></p>
+                      </ion-fab-button>
+                    </ion-fab-list>
+                    <ion-fab-list side="end">
+                      <ion-fab-button color="dark" href="admin_faculty_registration.html">
+                        <p title="Faculty Registration"><ion-icon name="bowtie"></ion-icon></p>
+                      </ion-fab-button>
+                    </ion-fab-list>
+                    <ion-fab-list side="bottom">
+                      <ion-fab-button color="secondary" href="admin_student_registration.html">
+                        <p title="Student Registration"><ion-icon name="school"></ion-icon></p>
+                      </ion-fab-button>
+                    </ion-fab-list>
+                    <ion-fab-list side="start">
+                        <ion-fab-button color="light"  href="admin_staff_registration.html">
+                        <p title="Staff Registration" ><ion-icon name="body"></ion-icon></p>
+                      </ion-fab-button>
+                    </ion-fab-list>
+                  </ion-fab>
+                  
+              
+
+            </ion-col>
+            <ion-col size-lg="4">
+              <ion-card class='myview'>
+                <ion-card-content>
+                    <ion-card-header>
+                   
+                        <ion-card-title color="light" align="center">
+                           Student Registration
+                        </ion-card-title>
+                    </ion-card-header>
+                    <form action='studentInsert.php' method='post'  onsubmit='return fun8()'>
+                      <ion-item class='fancy-button'>
+                        <ion-label position="floating">Admission Number</ion-label>
+                        <ion-icon name="person" slot="start"></ion-icon>
+                        <ion-input name='admin' id="admin" type="number" value="" onclick="fun1()"></ion-input>
+                      </ion-item>
+            <ion-item class='fancy-button'>
+                <ion-label position="floating"> Student Name</ion-label>
+                <ion-icon name="person" slot="start"></ion-icon><ion-input name="student" id="student" type="text" value="" onclick="fun1()"></ion-input>
+              </ion-item>
+              <ion-item class='fancy-button'>
+                <ion-label position="floating" >Father Name</ion-label><ion-icon name="man" slot="start"></ion-icon>
+                <ion-input name="F_name"   id="F_name" type="" onclick="fun2()" required></ion-input>
+              </ion-item>
+              <ion-item class='fancy-button'>
+                  <ion-label position="floating">Mother Name</ion-label><ion-icon name="woman" slot="start"></ion-icon>
+                  <ion-input name="M_name"   id="M_name" type="text" onclick="fun3()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                    <ion-label position="fixed">DOB</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                   <ion-input type='date' name='dob'  name='dob' onclick="fun6()" ></ion-input>
+                  </ion-item>
+                  <ion-item class='fancy-button'>
+                    <ion-label position="floating" >Aadhar Number</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                   <ion-input type='text' id='aadhar' onkeypress='fun7()' name='aadhar'></ion-input>
+                  </ion-item>
+                  <ion-item class='fancy-button'> 
+                    <ion-label position="floating">Passport Number</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                    <ion-input type='text'  id='passport' name='passport'></ion-input>
+                  </ion-item>
+                  <ion-item class='fancy-button'>
+                      <ion-label>Gender</ion-label><ion-icon slot="start" name="male"></ion-icon>
+                    
+                        <ion-item class='fancy-button'>
+                            <ion-label>Male</ion-label>
+                            <input type='radio' id='gen' value="male" name="gen">
+                            </ion-radio>
+                        </ion-item>
+                            <ion-item class='fancy-button'>
+                            <ion-label>Female</ion-label>
+                            <input type='radio' id='gen2' value="female" name="gen">
+                                
+                            </ion-radio>
+                        </ion-item>
+                    
+                  </ion-item>
+                
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating">House/Flat No</ion-label><ion-icon name="home" slot="start"></ion-icon>
+                  <ion-input name="H_no"   id="H_no" type="text" onclick="fun4()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating" >Street</ion-label><ion-icon name="contract" slot="start"></ion-icon>
+                  <ion-input name="street"   id="street" type="text" onclick="fun4()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating">City</ion-label><ion-icon name="business" slot="start"></ion-icon>
+                  <ion-input name="city"   id="city" type="text" onclick="fun4()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating">State</ion-label><ion-icon name="navigate" slot="start"></ion-icon>
+                  <ion-input name="state"   id="state" type="text" onclick="fun4()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating">Country</ion-label><ion-icon name="map" slot="start"></ion-icon>
+                  <ion-input name="country"   id="country" type="text" onclick="fun4()"></ion-input>
+                </ion-item>
+                <ion-item class='fancy-button'>
+                  <ion-label position="floating">PIN</ion-label><ion-icon name="bus" slot="start"></ion-icon>
+                  <ion-input name="pin"   id="pin" type="number"onclick="fun4()" ></ion-input>
+                </ion-item>
+               
+                
+               <ion-button  float-right fill='outline' type='submit' value='submit'>submit</ion-button>
+              </form>
+        
+            
+                </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col onclick="fun5()">
+                      
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+                <ion-row ><ion-col></ion-col></ion-row>
+
+          
+                <ion-row ><ion-col size-xs="6" offset="2"><p id="demo"></p></ion-col></ion-row>
+           
+            
+                
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-content>
+</ion-app>
+<script>
+    function fun1()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+" Name as in Date of Birth certificate"+"</div>"
+    }
+    function fun2()
+    {
+    
+       var gen=document.getElementById('gen').checked;
+       console.log(gen);
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"Father's Name as in DOB certificate of Student"+"</div>"
+    }
+
+    function fun3()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"Mother's Name as in DOB certificate of Student"+"</div>"
+    }
+    function fun4()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"As in passport or any valid address proof"+"</div>"
+    }
+    function fun5()
+    {
+        document.getElementById('demo').innerHTML=""
+    }
+    function fun6()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"As in passport or any valid  proof"+"</div>"
+    }
+    function fun7()
+    {
+        var aadhar=document.getElementById('aadhar').value;
+        if(aadhar.length>16)
+        {
+          console.log('hello');
+          alert=document.createElement('ion-alert');
+          alert.header='Invalid Input';
+          alert.message='Addhar number should not be greater that 16 digits';
+          alert.buttons=['ok'];
+          document.body.appendChild(alert);
+          alert.present();
+        }
+    }
+    function fun8()
+    {
+        var gender=document.getElementById('gen').checked;
+        var gender2=document.getElementById('gen2').checked;
+        if(gender===false && gender2===false)
+        {
+          alert=document.createElement('ion-alert');
+          alert.header='Invalid Input';
+          alert.message='please select gender';
+          alert.buttons=['ok'];
+          document.body.appendChild(alert);
+          alert.present();
+        return false;
+        }
+    }
+    
+    
+    </script>
+   
+
+    
+  </body>
+</html>

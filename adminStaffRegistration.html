@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@4.7.4/css/ionic.bundle.css"/>
+    <style>
+    
+      .box1 {
+        background-color:rgb(51, 98, 104);
+      width: 200px;
+      height:100px;
+      border: 15px ;
+      padding: 20px;
+     
+    }
+    a:link, a:visited {
+
+color: black;
+padding: 14px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+}
+.mycolor
+{
+  --background:#00000000;
+}
+.myview{
+  --background: #fff url("class.jfif") no-repeat center center / cover;
+}
+.fancy-button {
+  --background: #00000000;
+}
+
+
+
+    </style>
+  </head>
+  <body>
+    <ion-app>
+        
+        <ion-toolbar color="secondary" transulent>
+        <ion-title class='ion-text-center' position="floating">Staff Registration Form</ion-title>      
+    </ion-toolbar>
+<ion-content class='myview' >
+    <ion-grid>
+        <ion-row>
+            <ion-col size-xs="4" onclick="fun5()"><!--this is function for removing data in the block left to form-->
+          
+
+            </ion-col>
+            <ion-col size-xs="4">
+                <ion-card class='myview'>
+                    <ion-card-content>
+                        <ion-card-header>
+                            <ion-card-title color="light" align="center">
+                               Staff Registration
+                            </ion-card-title>
+                        </ion-card-header>
+                        <form action='staffInsert.php' method='post'>
+                        <ion-item class='mycolor'>
+                          <ion-label position="floating"> Sid</ion-label>
+                          <ion-icon name="person" slot="start"></ion-icon>
+                          <ion-input name='sid' id="sid" type="number" value="" onclick="fun1()"></ion-input>
+                        </ion-item>
+                <ion-item class='mycolor'>
+                    <ion-label position="floating"> Name</ion-label>
+                    <ion-icon name="person" slot="start"></ion-icon>
+                    <ion-input name="name" id="name" type="text" value="" onclick="fun1()"></ion-input>
+                  </ion-item>
+                  <ion-item class='mycolor'>
+                    <ion-label position="floating" >Father Name</ion-label><ion-icon name="man" slot="start"></ion-icon>
+                    <ion-input name="F_name"   id="F_name" type="" onclick="fun2()" required></ion-input>
+                  </ion-item>
+                  <ion-item class='mycolor'>
+                      <ion-label position="floating">Mother Name</ion-label><ion-icon name="woman" slot="start"></ion-icon>
+                      <ion-input name="M_name"   id="M_name" type="text" onclick="fun3()"></ion-input>
+                    </ion-item>
+                    <ion-item class='mycolor'>
+                        <ion-label position="fixed">DOB</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                       <ion-input type='date' name='dob' id='dob' onclick="fun6()" ></ion-input>
+                      </ion-item>
+                      <ion-item class='mycolor'>
+                        <ion-label position="floating" >Aadhar Number</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                       <ion-input type='text' id='aadhar' name='aadhar'></ion-input>
+                      </ion-item>
+                      <ion-item class='mycolor'>
+                        <ion-label position="floating">Passport Number</ion-label><ion-icon name="bed"slot="start"></ion-icon>
+                        <ion-input type='text'  id='passport' name='passport'></ion-input>
+                      </ion-item>
+                      <ion-item class='mycolor'>
+                          <ion-label>Gender</ion-label><ion-icon slot="start" name="male"></ion-icon>
+                      
+                            <ion-item class='mycolor'>
+                                <ion-label>Male</ion-label>
+                                <input type='radio' value="male" name="gen"></input>
+                                
+                            </ion-item>
+                                <ion-item class='mycolor'>
+                                <ion-label>Female</ion-label>
+                                <input type='radio' value="female" name="gen"></input>
+                                    
+                                
+                            </ion-item>
+                      
+                      </ion-item>
+                    
+                    <ion-item >
+                      <ion-label position="floating">House/Flat No</ion-label><ion-icon name="home" slot="start"></ion-icon>
+                      <ion-input name="H_no"  value='NA' id="H_no" type="text" onclick="fun4()"></ion-input>
+                    </ion-item>
+                    <ion-item class='mycolor'>
+                      <ion-label position="floating" >Street</ion-label><ion-icon name="contract" slot="start"></ion-icon>
+                      <ion-input name="street"   id="street" type="text" onclick="fun4()"></ion-input>
+                    </ion-item>
+                    <ion-item >
+                      <ion-label position="floating">City</ion-label><ion-icon name="business" slot="start"></ion-icon>
+                      <ion-input name="city"   id="city" type="text" onclick="fun4()"></ion-input>
+                    </ion-item>
+                    <ion-item class='mycolor'>
+                      <ion-label position="floating">State</ion-label><ion-icon name="navigate" slot="start"></ion-icon>
+                      <ion-input name="state"   id="state" type="text" onclick="fun4()"></ion-input>
+                    </ion-item>
+                    <ion-item class='mycolor'>
+                      <ion-label position="floating">Country</ion-label><ion-icon name="map" slot="start"></ion-icon>
+                      <ion-input name="country"   id="country" type="text" onclick="fun4()"></ion-input>
+                    </ion-item>
+                    <ion-item class='mycolor'>
+                      <ion-label position="floating">PIN</ion-label><ion-icon name="bus" slot="start"></ion-icon>
+                      <ion-input name="pin"   id="pin" type="number"onclick="fun4()" ></ion-input>
+                    </ion-item>
+                   
+                    
+                   <ion-button  type='submit' float-right>submit</ion-button>
+                  </form>
+            
+                </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col onclick="fun5()">
+                      
+                
+            
+
+          
+                <ion-col size-xs="6" offset="2"><p id="demo"></p></ion-col>
+           
+            
+                
+            </ion-col>
+
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<script>
+    function fun1()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+" Name as  on Pancard"+"</div>"
+    }
+    function fun2()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"Father's Name as on Aadhaar"+"</div>"
+    }
+    function fun3()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"Mother's Name as on Aadhaar"+"</div>"
+    }
+    function fun4()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"As in passport or any valid address proof"+"</div>"
+    }
+    function fun6()
+    {
+        document.getElementById('demo').innerHTML="<div class='box1'>"+"As in passport or any valid  proof"+"</div>"
+    }
+    function fun5()
+    {
+        document.getElementById('demo').innerHTML=""
+    }
+    
+    </script>
+    </ion-app>
+
+    
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
+  </head>
+  <body>
+   
+    <ion-app>
+      <ion-header>
+      <ion-toolbar text-right> Admin <ion-title>
+        <ion-list>
+      
+  
+       
+
+      </ion-title></ion-toolbar>
+      </ion-header>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+
+      <ion-list>
+     
+        <ion-item>
+          <ion-label>Registration</ion-label>
+          <ion-select  id="class" name='registration'   value='student'  interface="popover">
+            <ion-select-option value="student"><a>Student</a></ion-select-option>
+            <ion-select-option value="staff"><ion-button>Staff</ion-button></ion-select-option>
+            <ion-select-option value="Faculty"><ion-button>Faculty</ion-button></ion-select-option>
+          </ion-select> 
+          <ion-button type="submit" onclick='fun1()'>submit</ion-button>
+        </ion-item>
+    
+      </ion-list>
+    
+  </ion-col>
+    <ion-col>
+    <ion-item>
+      <form action='staffSearch.php' method='post'>
+        <ion-input placeholder='sid' name='sid'></ion-input>
+        <ion-button type='submit'>submit</ion-button>
+      </form>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <form action='studentSearch.php' method='post'>
+        <ion-input placeholder='adminNo' name='adminNo'></ion-input>
+        <ion-button type='submit'>submit</ion-button>
+      </form>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-item>
+      <form action='facultySearch.php' method='post'>
+        <ion-input placeholder='fid' name='fid'></ion-input>
+        <ion-button type='submit'>submit</ion-button>
+      </form>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <ion-content   color="primary">
+      <ion-fab horizontal="center" vertical="center" slot="fixed">
+          <ion-fab-button color="secondary">
+            <ion-icon name="menu"></ion-icon>
+          </ion-fab-button ><!--thi is floating button on left column-->
+          <ion-fab-list side="top">
+            <ion-fab-button color="danger" href="home3.html" class="fancy-button">
+              <p title="Home"><ion-icon  name="home"></ion-icon></p>
+            </ion-fab-button>
+          </ion-fab-list>
+          <ion-fab-list side="end">
+            <ion-fab-button color="dark" href="adminFacultyRegistration.html">
+              <p title="Faculty Registration"><ion-icon name="man"></ion-icon></p>
+            </ion-fab-button>
+          </ion-fab-list>
+          <ion-fab-list side="bottom">
+            <ion-fab-button color="secondary" href="adminStudentRegistration.html">
+              <p title="Student Registration"><ion-icon name="school"></ion-icon></p>
+            </ion-fab-button>
+          </ion-fab-list>
+          <ion-fab-list side="start">
+              <ion-fab-button color="light"  href="adminStaffRegistration.html">
+              <p title="Staff Registration" ><ion-icon name="body"></ion-icon></p>
+            </ion-fab-button>
+          </ion-fab-list>
+        </ion-fab>
+    
+    </ion-content>
+
+  </ion-col>
+  <ion-col>
+    <form action='fee.php' method='post'>
+    <ion-item>
+      <ion-label>Fee</ion-label>
+    <ion-input id='admin' name='admin' type='number'></ion-input>
+  </ion-item>
+  <ion-button type='submit'>submit</ion-button>
+</form>
+  </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form action='feestatementread.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Fee statement</ion-label>
+            <ion-input id='admin' name='admin' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>submit</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='studentModify.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Admin no</ion-label>
+            <ion-input id='admin' name='admin' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>submit</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='facultyModify.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Fid</ion-label>
+            <ion-input id='fid' name='fid' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>submit</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='staffModify.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Sid</ion-label>
+            <ion-input id='sid' name='sid' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>submit</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='studentDelete.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Admin no</ion-label>
+            <ion-input id='admin' name='admin' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>Del</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='staffDelete.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Sid</ion-label>
+            <ion-input id='sid' name='sid' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>del</ion-button>
+        </form>
+      </ion-col>
+      <ion-col>
+        <form action='facultyDelete.php' method='post'>
+          <ion-item>
+            <ion-label position='floating'>Fid</ion-label>
+            <ion-input id='fid' name='fid' type='number'></ion-input>
+          </ion-item>
+          <ion-button type='submit'>del</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+  
+
+    </ion-app>
+    <script>
+      function myFunction() {
+  document.getElementsByTagName("ion-app")[0].style.backgroundColor = "yellow";
+
+}
+function fun1()
+{
+  if(document.getElementById('class').value==='student')
+  window.open(adminStudentRegistration.html);
+}
+    </script>
+  </body>
+</html>
